@@ -6,6 +6,10 @@ var Weather = require('Weather');
 var About = require('About');
 var Examples = require('Examples');
 
+//Load function (loading in the css from foundations (a competitor to bootstrap))
+require('style!css!foundation-sites/dist/foundation.min.css')
+$(document).foundation();
+
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
@@ -17,7 +21,7 @@ ReactDOM.render(
   document.getElementById('app')
 );
 
-//the IndexRoute renders when the default URL is used, in this case it renders the weather component. otherwise it gets overridden when there are other URLS 
+//the IndexRoute renders when the default URL is used, in this case it renders the weather component. otherwise it gets overridden when there are other URLS
 //The Weather Component gets rendered when the URL is  'http://localhost:3000/#/?_k=rqkv9o'
 //but the About component gets rendered when the URL is 'http://localhost:3000/#/about?_k=rqkv9o'
 //the hashHistory thing makes it so that the URL uses a consisitant format of /#/****
